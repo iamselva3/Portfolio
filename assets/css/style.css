@@ -1881,10 +1881,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
+/* .service-list1 {
+  margin-left: -250px;
+  margin-top: 50px;
+  width: 110vw;
+  padding: 10px;
+  list-style: none;
+} */
 
 
 .service-item1 {
-  width: 110vh;
+  width: 100%;
 }
 
 .social-media {
