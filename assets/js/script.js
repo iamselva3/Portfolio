@@ -157,3 +157,30 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+//Download resume
+
+ document.getElementById('downloadResume').addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+
+    // If browser supports download attribute, nothing else needed.
+    // This fallback opens the resume in a new tab for preview if download isn't honored.
+    if (!('download' in HTMLAnchorElement.prototype)) {
+      e.preventDefault();
+      window.open(href, '_blank', 'noopener');
+      return;
+    }
+
+    // Optional: lightweight check to see if file exists (HEAD request). Non-blocking.
+    fetch(href, { method: 'HEAD' })
+      .then(res => {
+        if (!res.ok) {
+          console.warn('Resume file not found or inaccessible:', href);
+          // Let browser try to handle it anyway (no alert to user)
+        }
+      })
+      .catch(err => {
+        console.warn('Could not verify resume file availability:', err);
+      });
+  });

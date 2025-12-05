@@ -1962,3 +1962,40 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 15px;
   }
 }
+
+
+.resume-section {
+  text-align: center;          /* centers EVERYTHING */
+  margin-top: 20px;
+}
+
+.resume-title {
+  font-size: 1.4rem;           /* control size */
+  font-weight: 700;            /* boldness */
+  color: #fff;                 /* match your theme */
+  margin-bottom: 15px;
+}
+
+/* your button styling you already used */
+.resume-download {
+  display: flex;
+  justify-content: center;
+}
+
+.resume-download a {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#f5c266;
+  font-size: 22px;
+  transition: .2s;
+}
+.resume-download a:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
