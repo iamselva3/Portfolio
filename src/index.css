@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-bg: #ffffff;
+  --color-text: #09090b;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #09090b;
+}
+
+.dark {
+  --color-bg: #09090b;
+  --color-text: #fafafa;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  @apply antialiased transition-colors duration-300;
+}
