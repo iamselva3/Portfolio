@@ -3,6 +3,7 @@ export const portfolioData = {
     name: "Selvaganesh",
     role: "Full Stack Developer",
     intro: "I build fast, beautiful, and accessible web applications. Always exploring the intersection of design and engineering.",
+    resumeLink: "https://selva-social.s3.us-east-1.amazonaws.com/project/Selva_resume.pdf"
   },
   about: {
     summary: "Seeking a challenging junior MERN stack developer position where I can apply my skills to drive innovative web development projects while continuing to expand my knowledge and expertise in the field. I am passionate about staying current with industry trends and best practices to contribute effectively and grow as a developer My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.",
@@ -42,6 +43,7 @@ export const portfolioData = {
       problem: "Manual chit and gold investment tracking systems lacked transparency, scalability, and secure access control.",
       solution: "Built a scalable MERN platform with JWT authentication, RBAC, payment integration, and real-time order tracking for gold purchases.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "Razorpay"],
+      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ea78e78e-2a57-4d83-95c0-d948946d88b5.png",
       liveLink: "#",
       demoLink: "#"
     },
@@ -51,7 +53,7 @@ export const portfolioData = {
       problem: "E-commerce systems require secure authentication, scalable product handling, and smooth admin-user workflows.",
       solution: "Developed a full-stack e-commerce app with admin dashboard, AWS S3 image storage, Razorpay payments, and optimized REST APIs.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "AWS S3", "Razorpay"],
-      liveLink: "#",
+      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+24%2C+2026%2C+02_12_20+PM.png",
       liveLink: "https://ecommerce-frontend-kohl-delta.vercel.app/",
       demoLink: "https://ecommerce-frontend-kohl-delta.vercel.app/"
     },
@@ -61,6 +63,7 @@ export const portfolioData = {
       problem: "Users lack intelligent tools to enhance, summarize, and organize notes efficiently.",
       solution: "Built a backend-focused AI notebook integrating an Open LLM for note generation and summarization with secure APIs and optimized schemas.",
       tech: ["Node.js", "Express.js", "MongoDB", "JWT", "React", "AI API"],
+      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+24%2C+2026%2C+02_16_12+PM.png",
       liveLink: "https://ai-notebook-frontend-nine.vercel.app/",
       demoLink: "#"
     },
@@ -69,7 +72,7 @@ export const portfolioData = {
     email: "imselva1512@gmail.com",
     github: "https://github.com/iamselva3/",
     linkedin: "https://www.linkedin.com/in/selvaganesh3/",
-    twitter: "https://www.instagram.com/iamselva3/",
+    instagram: "https://www.instagram.com/iamselva3/",
     whatsapp: "919150888318"
   }
 };

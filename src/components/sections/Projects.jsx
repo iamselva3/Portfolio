@@ -32,8 +32,16 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-            <div className="flex-1 w-full aspect-video bg-gray-100 dark:bg-zinc-800 rounded-xl flex items-center justify-center overflow-hidden border border-gray-200 dark:border-zinc-700">
-              <span className="text-gray-400 dark:text-zinc-500 font-medium">Project Preview</span>
+            <div className="h-64 md:h-80 w-fit shrink-0 max-w-full bg-gray-100 dark:bg-zinc-800 rounded-xl flex items-center justify-center overflow-hidden border border-gray-200 dark:border-zinc-700 relative group/img mx-auto md:mx-0">
+              {project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={`${project.title} Preview`}
+                  className="w-auto h-full max-w-full object-contain transition-transform duration-500 group-hover/img:scale-105"
+                />
+              ) : (
+                <span className="text-gray-400 dark:text-zinc-500 font-medium">Project Preview</span>
+              )}
             </div>
           </div>
         ))}
