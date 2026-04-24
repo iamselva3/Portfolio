@@ -6,7 +6,11 @@ export const portfolioData = {
     resumeLink: "https://selva-social.s3.us-east-1.amazonaws.com/project/Selva_resume.pdf"
   },
   about: {
-    summary: "Seeking a challenging junior MERN stack developer position where I can apply my skills to drive innovative web development projects while continuing to expand my knowledge and expertise in the field. I am passionate about staying current with industry trends and best practices to contribute effectively and grow as a developer My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.",
+    summary: `Junior MERN Stack Developer with hands-on experience in building scalable, secure, and high-performance web applications using React, Node.js, Express.js, and MongoDB. Skilled in developing RESTful APIs, implementing JWT authentication, and designing responsive, user-centric interfaces.
+
+Experienced in delivering end-to-end solutions, including admin dashboards, payment integrations, and real-time features. Strong understanding of modern development practices, performance optimization, and clean code principles.
+
+Focused on creating intuitive, visually appealing, and efficient applications that enhance user experience and meet business objectives. Continuously learning and adapting to new technologies to stay aligned with industry standards.`,
   },
   education: [
     {
