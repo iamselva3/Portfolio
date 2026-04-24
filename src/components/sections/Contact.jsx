@@ -90,7 +90,8 @@ export default function Contact() {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Or reach out via</h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Prefer to connect directly? Feel free to reach out through any of my social profiles or drop me a direct message on WhatsApp!
+             Let’s build something meaningful.
+Connect with me on my socials or drop a message on WhatsApp — I’m always open to new opportunities.
             </p>
           </div>
           
