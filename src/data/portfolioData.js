@@ -73,6 +73,16 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       liveLink: "https://ai-notebook-frontend-nine.vercel.app/",
       demoLink: "#"
     },
+    {
+      id: "schoolmanagement",
+      title: "School Management System – MERN Full Stack Application",
+      problem: "Manual and fragmented systems for managing student records, attendance, and academic workflows lead to inefficiencies, data inconsistency, and lack of secure access control.",
+      solution: "Developed a full-stack school management system to centralize student, teacher, and academic workflows. Implemented JWT-based authentication and role-based access control (RBAC) to manage admin, staff, and student-level permissions securely. Designed scalable RESTful APIs for student records, attendance tracking, course management, and performance data with proper validation and centralized error handling. Structured and optimized MongoDB schemas for efficient CRUD operations and data consistency across modules. Built a responsive React frontend with reusable components and dashboard views for managing users, attendance, and academic data, ensuring smooth API integration and real-time updates.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
+      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+25%2C+2026%2C+02_17_41+PM.png",
+      liveLink: "https://school-management-frontend-five-omega.vercel.app/",
+      demoLink: "#"
+    }
   ],
   contact: {
     email: "imselva1512@gmail.com",
