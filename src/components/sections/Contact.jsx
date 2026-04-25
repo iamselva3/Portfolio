@@ -96,13 +96,13 @@ Connect with me on my socials or drop a message on WhatsApp — I’m always ope
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <a href={github} className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="GitHub">
+            <a href={github} target='_blank' className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="GitHub">
               <GithubIcon className="w-6 h-6" />
             </a>
-            <a href={linkedin} className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="LinkedIn">
+            <a href={linkedin} target='_blank' className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="LinkedIn">
               <LinkedinIcon className="w-6 h-6" />
             </a>
-            <a href={instagram} className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="Instagram">
+            <a href={instagram} target='_blank' className="gravity-target p-4 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all hover:-translate-y-1" aria-label="Instagram">
               <InstagramIcon className="w-6 h-6" />
             </a>
             {whatsapp && (
