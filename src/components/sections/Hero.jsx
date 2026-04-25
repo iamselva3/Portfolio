@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { usePreference } from '../../context/PreferenceContext';
 import AnimatedSection from '../ui/AnimatedSection';
 import { portfolioData } from '../../data/portfolioData';
@@ -25,6 +25,36 @@ export default function Hero() {
     }
   };
 
+  // Mouse Parallax Logic
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 50, stiffness: 400 };
+  const smoothMouseX = useSpring(mouseX, springConfig);
+  const smoothMouseY = useSpring(mouseY, springConfig);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX - innerWidth / 2) / (innerWidth / 2);
+      const y = (e.clientY - innerHeight / 2) / (innerHeight / 2);
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  const leftX = useTransform(smoothMouseX, [-1, 1], [30, -30]);
+  const leftY = useTransform(smoothMouseY, [-1, 1], [30, -30]);
+
+  const rightX = useTransform(smoothMouseX, [-1, 1], [40, -40]);
+  const rightY = useTransform(smoothMouseY, [-1, 1], [40, -40]);
+
+  const centerX = useTransform(smoothMouseX, [-1, 1], [15, -15]);
+  const centerY = useTransform(smoothMouseY, [-1, 1], [15, -15]);
+
   return (
     <AnimatedSection id="hero" className="min-h-[80vh] flex flex-col justify-center items-center relative overflow-hidden pt-10 md:pt-20 pb-10">
       
@@ -36,41 +66,53 @@ export default function Hero() {
       >
         
         {/* Left Card */}
-        <motion.div
-          variants={{
-            initial: { x: "-15vw", y: "10%", rotate: -8, scale: 0.85, opacity: 0.4 },
-            hover: { x: "-20vw", y: "2%", rotate: -12, scale: 0.9, opacity: 0.8 }
-          }}
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 dark:border-white/10 shadow-2xl"
-        >
-          <img src={images[0]} alt="Background Left" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
-          <div className="absolute inset-0 bg-black/10 dark:bg-black/40"></div>
+        <motion.div style={{ x: leftX, y: leftY }} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              variants={{
+                initial: { x: "-15vw", y: "10%", rotate: -8, scale: 0.85, opacity: 0.4 },
+                hover: { x: "-20vw", y: "2%", rotate: -12, scale: 0.9, opacity: 0.8 }
+              }}
+              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 dark:border-white/10 shadow-2xl"
+            >
+              <img src={images[0]} alt="Background Left" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+              <div className="absolute inset-0 bg-black/10 dark:bg-black/40"></div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* Right Card */}
-        <motion.div
-          variants={{
-            initial: { x: "15vw", y: "10%", rotate: 8, scale: 0.85, opacity: 0.4 },
-            hover: { x: "20vw", y: "2%", rotate: 12, scale: 0.9, opacity: 0.8 }
-          }}
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 dark:border-white/10 shadow-2xl"
-        >
-          <img src={images[2]} alt="Background Right" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
-          <div className="absolute inset-0 bg-black/10 dark:bg-black/40"></div>
+        <motion.div style={{ x: rightX, y: rightY }} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              variants={{
+                initial: { x: "15vw", y: "10%", rotate: 8, scale: 0.85, opacity: 0.4 },
+                hover: { x: "20vw", y: "2%", rotate: 12, scale: 0.9, opacity: 0.8 }
+              }}
+              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 dark:border-white/10 shadow-2xl"
+            >
+              <img src={images[2]} alt="Background Right" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+              <div className="absolute inset-0 bg-black/10 dark:bg-black/40"></div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* Center Card */}
-        <motion.div
-          variants={{
-            initial: { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 },
-            hover: { x: 0, y: "-5%", rotate: 0, scale: 1.05, opacity: 1 }
-          }}
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border-2 border-white/30 dark:border-white/20 shadow-2xl z-10"
-        >
-          <img src={images[1]} alt="Background Center" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+        <motion.div style={{ x: centerX, y: centerY }} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              variants={{
+                initial: { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 },
+                hover: { x: 0, y: "-5%", rotate: 0, scale: 1.05, opacity: 1 }
+              }}
+              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              className="absolute w-56 md:w-60 lg:w-72 aspect-[3/4] rounded-3xl overflow-hidden border-2 border-white/30 dark:border-white/20 shadow-2xl z-10"
+            >
+              <img src={images[1]} alt="Background Center" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+            </motion.div>
+          </motion.div>
         </motion.div>
 
       </motion.div>
