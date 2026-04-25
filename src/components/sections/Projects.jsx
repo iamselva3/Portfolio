@@ -48,7 +48,7 @@ export default function Projects() {
                   {/* Left Side: Description & Links */}
                   <div className="flex-1 flex flex-col justify-between space-y-6">
                     <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                      {project.problem} {project.solution}
+                       {project.solution}
                     </p>
 
                     <div className="flex flex-wrap gap-3 pt-2">
