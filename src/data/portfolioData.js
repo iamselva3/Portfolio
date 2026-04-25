@@ -1,9 +1,11 @@
+import resumeFile from '../assets/Selva_resume.pdf';
+
 export const portfolioData = {
   hero: {
     name: "Selvaganesh",
     role: "Full Stack Developer",
     intro: "I build fast, beautiful, and accessible web applications. Always exploring the intersection of design and engineering.",
-    resumeLink: "https://selva-social.s3.us-east-1.amazonaws.com/project/Selva_resume.pdf"
+    resumeLink: resumeFile
   },
   about: {
     summary: `Junior MERN Stack Developer with hands-on experience in building scalable, secure, and high-performance web applications using React, Node.js, Express.js, and MongoDB. Skilled in developing RESTful APIs, implementing JWT authentication, and designing responsive, user-centric interfaces.
@@ -31,13 +33,13 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       role: "MERN Stack Developer",
       company: "ATTS Technologies Pvt Ltd",
       period: "Jan,2025 - Dec,2026",
-      description: "Developed UI components using React and styled-components. Assisted in migrating legacy codebase.",
+      description: "Developed and maintained scalable MERN stack applications for gold investment and chit management systems. Built secure REST APIs with JWT authentication and role-based access control (RBAC). Designed admin dashboards, real-time transaction modules, and order tracking features. Optimized MongoDB queries to improve performance and response time. Integrated Razorpay and Cashfree payment gateways for secure transactions. Managed end-to-end deployment using AWS EC2, S3, Vercel, and Render.",
     },
     {
       role: "MERN Stack Developer Intern",
       company: "ZIDIO Development",
-      period: "2022 - Present",
-      description: "Leading the development of highly interactive web applications using React and Framer Motion. Improved Lighthouse scores by 40%.",
+      period: "Jan,2024-April,2024",
+      description: "Developed and optimized React components for MERN-based applications, focusing on responsive design and performance. Integrated REST APIs and handled state management for dynamic data rendering. Improved UI efficiency by reducing re-renders and enhancing component structure. Collaborated in an Agile team environment using Git for version control and feature delivery.",
     },
   ],
   projects: [
