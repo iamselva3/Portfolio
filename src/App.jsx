@@ -1,5 +1,6 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import Layout from './components/layout/Layout';
+import Chatbot from './components/ui/Chatbot';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
@@ -45,6 +46,7 @@ export default function App() {
           <GravityView onClose={() => setGravityActive(false)} />
         </Suspense>
       )}
-    </>
+      <Chatbot />
+      </>
   );
 }
