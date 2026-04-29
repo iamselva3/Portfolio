@@ -74,6 +74,16 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       demoLink: "#"
     },
     {
+      id: "ai-document-intelligence",
+      title: "AI Document Intelligence System – MERN Full Stack Application",
+      problem: "Reading and analyzing large PDF documents manually is time-consuming, inefficient, and lacks intelligent summarization, making it difficult for users to extract key insights quickly.",
+      solution: "Developed a full-stack AI-powered document intelligence system to automate PDF processing, text extraction, and summarization. Integrated advanced LLMs (Gemini/GPT) to generate concise summaries and meaningful insights from complex documents, significantly reducing manual effort. Implemented secure cloud-based file management using AWS S3 with time-limited signed URLs for controlled access. Engineered scalable RESTful APIs with Node.js and Express, including JWT-based authentication and automated PDF text extraction pipelines. Designed optimized MongoDB schemas for document metadata and processing history to ensure efficient storage and retrieval. Built a responsive React frontend with a modern Glassmorphism UI and Framer Motion animations, providing an interactive dashboard for document analysis and visualization.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "AWS S3", "Gemini API / OpenAI GPT", "Framer Motion", "Tailwind CSS"],
+      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+29%2C+2026%2C+01_14_38+PM.png",
+      liveLink: "https://ai-document-intelligence-system-fro.vercel.app/",
+      demoLink: "#https://ai-document-intelligence-system-fro.vercel.app/"
+    },
+    {
       id: "schoolmanagement",
       title: "School Management System – MERN Full Stack Application",
       problem: "Manual and fragmented systems for managing student records, attendance, and academic workflows lead to inefficiencies, data inconsistency, and lack of secure access control.",
@@ -89,6 +99,6 @@ Focused on creating intuitive, visually appealing, and efficient applications th
     github: "https://github.com/iamselva3/",
     linkedin: "https://www.linkedin.com/in/selvaganesh3/",
     instagram: "https://www.instagram.com/iamselva3/",
-    whatsapp: "919150888318"
+    whatsapp: "9150888318"
   }
 };
