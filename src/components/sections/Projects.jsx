@@ -162,8 +162,8 @@ export default function Projects() {
         
         <div className="flex gap-4">
           <div className="text-right">
-            <p className="text-3xl font-bold text-gray-900 dark:text-white">10+</p>
-            <p className="text-sm text-gray-500">Completed Projects</p>
+            {/* <p className="text-3xl font-bold text-gray-900 dark:text-white">10+</p>
+            <p className="text-sm text-gray-500">Completed Projects</p> */}
           </div>
         </div>
       </div>

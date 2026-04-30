@@ -32,7 +32,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
     {
       role: "MERN Stack Developer",
       company: "ATTS Technologies Pvt Ltd",
-      period: "Jan,2025 - Dec,2026",
+      period: "Jan,2026 - Dec,2026",
       description: "Developed and maintained scalable MERN stack applications for gold investment and chit management systems. Built secure REST APIs with JWT authentication and role-based access control (RBAC). Designed admin dashboards, real-time transaction modules, and order tracking features. Optimized MongoDB queries to improve performance and response time. Integrated Razorpay and Cashfree payment gateways for secure transactions. Managed end-to-end deployment using AWS EC2, S3, Vercel, and Render.",
     },
     {
