@@ -30,6 +30,12 @@ Focused on creating intuitive, visually appealing, and efficient applications th
   ],
   experience: [
     {
+      role: "Software Engineer",
+      company: "United Nexa Tech",
+      period: "May,2026 - Present",
+      description: "Working as a Software Engineer building a production-grade MERN stack application end to end. Architected scalable REST APIs with Node.js and Express, implementing JWT authentication and role-based access control (RBAC) for secure, multi-role workflows. Designed and optimized MongoDB schemas and queries for performance and data consistency. Built a responsive, component-driven React frontend with reusable UI patterns and clean state management. Collaborated in an Agile team using Git for version control, code reviews, and continuous feature delivery, owning features from design through deployment.",
+    },
+    {
       role: "MERN Stack Developer",
       company: "ATTS Technologies Pvt Ltd",
       period: "Jan,2026 - Dec,2026",

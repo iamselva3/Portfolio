@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useState, useEffect, Suspense, lazy } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { usePreference } from '../../context/PreferenceContext';
+import { useTheme } from '../../context/ThemeContext';
 import AnimatedSection from '../ui/AnimatedSection';
 import { portfolioData } from '../../data/portfolioData';
 import { ArrowRight, Download } from 'lucide-react';
+
+const Hero3D = lazy(() => import('../interactive/Hero3D'));
 
 import profilePic from '../../assets/Selva.png';
 import selva1 from '../../assets/selva1.png';
@@ -11,6 +14,7 @@ import selva2 from '../../assets/selva2.png';
 
 export default function Hero() {
   const { recruiterMode } = usePreference();
+  const { theme } = useTheme();
   const { name, role, intro, resumeLink } = portfolioData.hero;
 
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -57,7 +61,18 @@ export default function Hero() {
 
   return (
     <AnimatedSection id="hero" className="min-h-[80vh] flex flex-col justify-center items-center relative overflow-hidden pt-10 md:pt-20 pb-10">
-      
+
+      {/* Ambient WebGL depth layer (lazy-loaded, sits behind everything) */}
+      {!recruiterMode && (
+        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-50 dark:opacity-60 blur-[2px] md:blur-0">
+          <div className="relative h-[70vh] w-full max-w-3xl">
+            <Suspense fallback={null}>
+              <Hero3D isDark={theme === 'dark'} />
+            </Suspense>
+          </div>
+        </div>
+      )}
+
       {/* Desktop Interactive Background Container */}
       <motion.div 
         className="absolute inset-0 w-full h-full hidden md:flex items-center justify-center z-0 pt-0"

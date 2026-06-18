@@ -16,8 +16,33 @@
   --color-text: #fafafa;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   @apply antialiased transition-colors duration-300;
+}
+
+/* Native smooth scrolling fallback when Lenis is disabled (reduced motion). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Keep WebGL canvas from blocking pointer / scroll and let it span its box. */
+canvas {
+  touch-action: none;
 }

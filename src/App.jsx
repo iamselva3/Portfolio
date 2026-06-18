@@ -1,4 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
+import useSmoothScroll from './hooks/useSmoothScroll';
 import Layout from './components/layout/Layout';
 import Chatbot from './components/ui/Chatbot';
 import Hero from './components/sections/Hero';
@@ -11,6 +12,8 @@ const GravityView = lazy(() => import('./components/interactive/GravityView'));
 
 export default function App() {
   const [gravityActive, setGravityActive] = useState(false);
+
+  useSmoothScroll();
 
   useEffect(() => {
     let keyBuffer = '';
