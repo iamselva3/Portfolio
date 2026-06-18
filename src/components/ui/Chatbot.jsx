@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MessageSquare, X, Send, Trash2 } from "lucide-react";
 import { getChatSession } from "../../utils/gemini";
 
@@ -37,7 +37,7 @@ const Chatbot = () => {
     setLoading(true);
     try {
       const result = await chatRef.current.sendMessage(userMessage);
-      const responseText = result?.response?.text() || "";
+      const responseText = (await result?.response?.text()) || "";
       setMessages((prev) => [...prev, { role: ASSISTANT, text: responseText }]);
     } catch (err) {
       console.error(err);
