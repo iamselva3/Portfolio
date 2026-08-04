@@ -1,0 +1,630 @@
+/* ============================================================
+   HERO SECTION — Premium Dark Theme Styles
+   ============================================================ */
+
+/* ---------- Section Root ---------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  align-items: center;
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  color: #f0f0f0;
+  width: 100%;
+  margin-top: -64px; /* offset the Layout's pt-16 (64px) */
+  padding-top: 64px; /* re-add the padding inside so content clears the navbar */
+  overflow: hidden;
+}
+
+/* ---------- Dot Grid Background ---------- */
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Ambient Glow Circles ---------- */
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-glow--primary {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  top: 10%;
+  right: 5%;
+}
+.hero-glow--secondary {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(96,165,250,0.1) 0%, transparent 70%);
+  bottom: 15%;
+  left: 10%;
+}
+.hero-glow--accent {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 40%;
+  transform: translateY(-50%);
+}
+
+/* ---------- Content Grid ---------- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2.5rem;
+  min-height: calc(100vh - 64px);
+}
+
+/* ---------- Left Column ---------- */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Label Pill */
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3B82F6;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  width: fit-content;
+}
+.hero-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px rgba(59,130,246,0.6);
+  animation: label-pulse 2s ease-in-out infinite;
+}
+@keyframes label-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(59,130,246,0.6); }
+  50%      { opacity: 0.5; box-shadow: 0 0 16px rgba(59,130,246,0.9); }
+}
+
+/* Heading */
+.hero-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+.hero-heading .hero-heading-accent {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA, #818CF8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ---------- CTA Buttons ---------- */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Shared button base */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.hero-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Primary — solid blue */
+.hero-btn-primary {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  color: #ffffff;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.25), 0 1px 3px rgba(0,0,0,0.2);
+}
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(59,130,246,0.4), 0 2px 8px rgba(0,0,0,0.3);
+}
+.hero-btn-primary:hover svg {
+  transform: translateX(3px);
+}
+
+/* Secondary — outlined */
+.hero-btn-secondary {
+  background: transparent;
+  color: #e0e0e0;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.hero-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(59,130,246,0.4);
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(59,130,246,0.12);
+}
+
+/* Glass — download resume */
+.hero-btn-glass {
+  background: rgba(255,255,255,0.06);
+  color: #d0d0d0;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.hero-btn-glass:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(255,255,255,0.06);
+}
+
+/* ---------- Right Column — Visual Composition ---------- */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+/* Composition wrapper */
+.hero-composition {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glowing ring behind portrait */
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(59,130,246,0.15);
+  pointer-events: none;
+}
+.hero-ring--outer {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 60px rgba(59,130,246,0.08), inset 0 0 60px rgba(59,130,246,0.04);
+  animation: ring-pulse 6s ease-in-out infinite;
+}
+.hero-ring--inner {
+  width: 75%;
+  height: 75%;
+  border-color: rgba(59,130,246,0.1);
+  box-shadow: 0 0 40px rgba(59,130,246,0.06);
+  animation: ring-pulse 6s ease-in-out infinite 1s;
+}
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.02); }
+}
+
+/* Portrait container — completely open and unconstrained for transparent PNGs.
+   The 360/440 aspect ratio must stay fixed across every breakpoint: the per-image
+   scale/x/y offsets in Hero.jsx are derived for this ratio, and changing it would
+   make the portraits render at different sizes again. Resize via width only.
+   overflow must stay visible — the portraits are scaled to bleed past the box. */
+.portrait-container {
+  position: relative;
+  width: 360px;
+  aspect-ratio: 360 / 440;
+  z-index: 3;
+  overflow: visible;
+  border-radius: 0;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Portrait images — freely floating with high-definition lighting & drop shadow */
+.portrait-container .portrait-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  /* Multi-layer depth shadow and luminous cyber glow */
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.75))
+          drop-shadow(0 0 35px rgba(59,130,246,0.2))
+          contrast(1.05)
+          brightness(1.02);
+  transition: filter 0.5s ease;
+}
+
+/* Hover effect on portrait */
+.portrait-container:hover .portrait-img {
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.85))
+          drop-shadow(0 0 45px rgba(59,130,246,0.35))
+          contrast(1.08)
+          brightness(1.05);
+}
+
+/* Dynamic Aura Glow backdrop behind the person.
+   Generously inset so the aura extends past even the widest pose (2.png's arms
+   reach beyond the container). A tight inset made the glow's edge read as a
+   visible box around the subject. */
+.portrait-glow-backdrop {
+  position: absolute;
+  inset: -110px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.8s ease;
+  animation: glow-breathe 4.5s ease-in-out infinite;
+}
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.06); }
+}
+
+/* ── Portrait Dots Pagination ── */
+.portrait-dots {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 5;
+}
+.portrait-dot {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portrait-dot__inner {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.portrait-dot:hover .portrait-dot__inner {
+  background: rgba(255,255,255,0.7);
+  transform: scale(1.2);
+}
+.portrait-dot--active .portrait-dot__inner {
+  width: 20px;
+  border-radius: 10px;
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
+/* ---------- Glass Cards ---------- */
+.glass-card {
+  position: absolute;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1rem;
+  z-index: 4;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+/* Code snippet card */
+.glass-card--code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  min-width: 180px;
+}
+.glass-card--code .code-keyword { color: #C678DD; }
+.glass-card--code .code-function { color: #61AFEF; }
+.glass-card--code .code-string  { color: #98C379; }
+.glass-card--code .code-const   { color: #E5C07B; }
+.glass-card--code .code-comment { color: rgba(255,255,255,0.3); font-style: italic; }
+
+/* Terminal card */
+.glass-card--terminal {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.65rem;
+  line-height: 1.7;
+  min-width: 190px;
+}
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.terminal-dot--red    { background: #FF5F57; }
+.terminal-dot--yellow { background: #FFBD2E; }
+.terminal-dot--green  { background: #28CA41; }
+.terminal-title {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.3);
+  margin-left: 4px;
+}
+.terminal-line { color: rgba(255,255,255,0.6); }
+.terminal-prompt { color: #28CA41; }
+.terminal-cmd    { color: #61AFEF; }
+.terminal-output { color: rgba(255,255,255,0.4); }
+
+/* Stats/dashboard card */
+.glass-card--stats {
+  min-width: 150px;
+}
+.stats-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.5rem;
+}
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+}
+.stats-bar {
+  height: 4px;
+  border-radius: 2px;
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.stats-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+}
+.stats-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  min-width: 28px;
+}
+
+/* ---------- Floating Tech Icons ---------- */
+.floating-icon {
+  position: absolute;
+  /* Must sit BEHIND the portrait (z-index 3). The portraits are scaled to fill
+     and bleed past the composition box, so an icon in front of one reads as a
+     stray frosted panel stuck on the subject. */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.floating-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Neural Network Lines (SVG overlay) ---------- */
+.neural-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.neural-lines line {
+  stroke: rgba(59,130,246,0.08);
+  stroke-width: 1;
+}
+.neural-lines circle {
+  fill: rgba(59,130,246,0.15);
+}
+
+/* ---------- Particles ---------- */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.3);
+  pointer-events: none;
+  z-index: 1;
+  animation: particle-drift linear infinite;
+}
+@keyframes particle-drift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-120px) translateX(40px); opacity: 0; }
+}
+
+/* ---------- Float Animation ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet & below — stack vertically under 768px */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 5rem 1.5rem 3rem;
+    min-height: auto;
+  }
+  .hero-left {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-description {
+    max-width: 100%;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-right {
+    min-height: 380px;
+  }
+  .hero-composition {
+    max-width: 350px;
+  }
+  .portrait-container {
+    width: 230px; /* height follows from the fixed aspect-ratio */
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 479px) {
+  .hero-content {
+    padding: 5rem 1.25rem 2rem;
+    gap: 2rem;
+  }
+  .hero-heading {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+  .hero-description {
+    font-size: 0.9rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .hero-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+  }
+  .hero-right {
+    min-height: 360px;
+  }
+  .hero-composition {
+    max-width: 320px;
+  }
+  .portrait-container {
+    width: 190px; /* height follows from the fixed aspect-ratio */
+  }
+  .glass-card {
+    display: none;
+  }
+  .floating-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+  .floating-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .hero-glow--primary {
+    width: 300px;
+    height: 300px;
+  }
+  .hero-glow--secondary {
+    width: 200px;
+    height: 200px;
+  }
+}
