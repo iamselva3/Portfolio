@@ -83,14 +83,14 @@ const GitIcon = () => (
 // ─── Floating Tech Icon Positions ───────────────────────────────────────────
 
 const techIcons = [
-  { Icon: ReactIcon,      label: 'React',      top: '5%',  left: '15%',  delay: 0,   parallax: 25 },
-  { Icon: NodeIcon,       label: 'Node.js',    top: '12%', right: '8%',  delay: 0.8, parallax: 30 },
-  { Icon: TypeScriptIcon, label: 'TypeScript',  top: '40%', left: '2%',   delay: 0.4, parallax: 20 },
-  { Icon: DockerIcon,     label: 'Docker',     bottom: '25%', left: '10%', delay: 1.2, parallax: 35 },
-  { Icon: AWSIcon,        label: 'AWS',        top: '30%', right: '3%',  delay: 0.6, parallax: 28 },
-  { Icon: MongoIcon,      label: 'MongoDB',    bottom: '10%', right: '15%', delay: 1.0, parallax: 22 },
-  { Icon: PostgresIcon,   label: 'PostgreSQL', bottom: '8%',  left: '25%', delay: 1.4, parallax: 32 },
-  { Icon: GitIcon,        label: 'Git',        top: '8%',  left: '55%',  delay: 0.2, parallax: 18 },
+  { Icon: ReactIcon,      label: 'React',      top: '4%',   left: '4%',   delay: 0,   parallax: 8 },
+  { Icon: TypeScriptIcon, label: 'TypeScript', top: '28%',  left: '1%',   delay: 0.4, parallax: 7 },
+  { Icon: DockerIcon,     label: 'Docker',     top: '52%',  left: '1%',   delay: 1.2, parallax: 8 },
+  { Icon: GitIcon,        label: 'Git',        top: '2%',   left: '38%',  delay: 0.2, parallax: 6 },
+  { Icon: NodeIcon,       label: 'Node.js',    top: '26%',  right: '2%',  delay: 0.8, parallax: 8 },
+  { Icon: AWSIcon,        label: 'AWS',        top: '50%',  right: '2%',  delay: 0.6, parallax: 7 },
+  { Icon: PostgresIcon,   label: 'PostgreSQL', bottom: '4%', left: '34%', delay: 1.4, parallax: 7 },
+  { Icon: MongoIcon,      label: 'MongoDB',    bottom: '4%', right: '34%', delay: 1.0, parallax: 7 },
 ];
 
 // ─── Particles data ─────────────────────────────────────────────────────────
@@ -171,7 +171,7 @@ const heroImages = [
     // 1080x1256 canvas, subject fills it; both arms raised beside the head
     scale: 1.147,
     x: '0.46%',
-    y: '1.23%',
+    y: '-6.23%',
     glowColor: 'rgba(59, 130, 246, 0.38)', // Cyber Blue
   },
   {
@@ -225,9 +225,9 @@ export default function Hero() {
     y: useTransform(smoothY, [-1, 1], [intensity, -intensity]),
   });
 
-  const layerSlow = createParallax(10);
-  const layerMed  = createParallax(20);
-  const layerFast = createParallax(35);
+  const layerSlow = createParallax(4);
+  const layerMed  = createParallax(8);
+  const layerFast = createParallax(12);
 
   return (
     <AnimatedSection id="hero" className="!py-0">
@@ -307,27 +307,27 @@ export default function Hero() {
 
           {/* ─────── RIGHT COLUMN: Visual Composition ─────── */}
           <div className="hero-right">
-            <motion.div
-              className="hero-composition"
-              style={{ x: layerSlow.x, y: layerSlow.y }}
-            >
+            <div className="hero-composition">
               {/* Neural Network Lines (SVG) */}
               {!recruiterMode && (
                 <svg className="neural-lines" viewBox="0 0 520 520" preserveAspectRatio="xMidYMid meet">
-                  <line x1="80" y1="30"  x2="260" y2="160" />
-                  <line x1="440" y1="65"  x2="300" y2="180" />
-                  <line x1="15" y1="210" x2="160" y2="260" />
-                  <line x1="505" y1="160" x2="360" y2="240" />
-                  <line x1="55" y1="390" x2="180" y2="320" />
-                  <line x1="400" y1="470" x2="320" y2="350" />
-                  <line x1="130" y1="470" x2="230" y2="360" />
+                  <line x1="45" y1="45"   x2="180" y2="150" />
+                  <line x1="215" y1="30"  x2="250" y2="120" />
+                  <line x1="35" y1="165"  x2="160" y2="210" />
+                  <line x1="480" y1="155" x2="360" y2="200" />
+                  <line x1="35" y1="290"  x2="150" y2="300" />
+                  <line x1="480" y1="280" x2="370" y2="300" />
+                  <line x1="200" y1="480" x2="220" y2="390" />
+                  <line x1="320" y1="480" x2="300" y2="390" />
                   {/* Node dots at intersections */}
-                  <circle cx="260" cy="160" r="3" />
-                  <circle cx="300" cy="180" r="2.5" />
-                  <circle cx="160" cy="260" r="2" />
-                  <circle cx="360" cy="240" r="2" />
-                  <circle cx="180" cy="320" r="2.5" />
-                  <circle cx="320" cy="350" r="3" />
+                  <circle cx="180" cy="150" r="2.5" />
+                  <circle cx="250" cy="120" r="2.5" />
+                  <circle cx="160" cy="210" r="2" />
+                  <circle cx="360" cy="200" r="2" />
+                  <circle cx="150" cy="300" r="2.5" />
+                  <circle cx="370" cy="300" r="2.5" />
+                  <circle cx="220" cy="390" r="2.5" />
+                  <circle cx="300" cy="390" r="2.5" />
                 </svg>
               )}
 
@@ -450,8 +450,8 @@ export default function Hero() {
                 style={{
                   top: '2%',
                   right: '0%',
-                  x: layerFast.x,
-                  y: layerFast.y,
+                  x: layerMed.x,
+                  y: layerMed.y,
                 }}
                 variants={scaleIn}
                 initial="hidden"
@@ -497,9 +497,9 @@ export default function Hero() {
                 className="glass-card glass-card--terminal"
                 style={{
                   bottom: '2%',
-                  left: '-2%',
-                  x: layerFast.x,
-                  y: layerFast.y,
+                  left: '0%',
+                  x: layerMed.x,
+                  y: layerMed.y,
                 }}
                 variants={scaleIn}
                 initial="hidden"
@@ -554,7 +554,7 @@ export default function Hero() {
               <motion.div
                 className="glass-card glass-card--stats"
                 style={{
-                  bottom: '10%',
+                  bottom: '2%',
                   right: '0%',
                   x: layerMed.x,
                   y: layerMed.y,
@@ -602,7 +602,7 @@ export default function Hero() {
                 )}
               </motion.div>
 
-            </motion.div>
+            </div>
           </div>
 
         </div>
