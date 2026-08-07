@@ -55,7 +55,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       problem: "Manual chit and gold investment tracking systems lacked transparency, scalability, and secure access control.",
       solution: "Engineered a scalable MERN-based platform to digitize chit fund and gold investment workflows, enabling customer onboarding, scheme management, payment tracking, and order processing. Implemented JWT-based authentication and role-based access control (RBAC) to enforce secure admin and user operations. Designed modular REST APIs for schemes, payments, gold orders, and shipment tracking with centralized error handling and validation. Optimized MongoDB schemas and queries to ensure high performance and data consistency. Integrated Razorpay for secure transactions and developed a responsive admin dashboard with reusable React components and Tailwind CSS, along with real-time delivery tracking features.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "Razorpay"],
-      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ea78e78e-2a57-4d83-95c0-d948946d88b5.png",
+      image: "https://i.ibb.co/QFtFN6Cx/Chat-GPT-Image-Aug-7-2026-03-09-46-PM.png",
       liveLink: "#",
       demoLink: "#"
     },
@@ -65,7 +65,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       problem: "E-commerce systems require secure authentication, scalable product handling, and smooth admin-user workflows.",
       solution: "Built a full-stack e-commerce platform supporting complete user and admin workflows, including product browsing, cart management, and checkout processing. Developed secure authentication using JWT and implemented RBAC for protected admin operations such as product, category, and user management. Designed and integrated RESTful APIs with optimized MongoDB schemas for efficient product and order handling. Integrated AWS S3 for scalable product image storage and Razorpay for seamless online payments. Created a responsive UI and dynamic admin dashboard using React and Tailwind CSS to manage inventory, featured products, and user activities efficiently.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "AWS S3", "Razorpay"],
-      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+24%2C+2026%2C+02_12_20+PM.png",
+      image: "https://i.ibb.co/SD02yT6d/Chat-GPT-Image-Aug-7-2026-03-11-55-PM.png",
       liveLink: "https://ecommerce-frontend-kohl-delta.vercel.app/",
       demoLink: "https://ecommerce-frontend-kohl-delta.vercel.app/"
     },
@@ -75,7 +75,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       problem: "Users lack intelligent tools to enhance, summarize, and organize notes efficiently.",
       solution: "Developed a backend-driven AI-powered notebook application that allows users to generate, summarize, and enhance notes using an integrated LLM API. Built secure JWT-based authentication and protected REST APIs to ensure user data isolation and session security. Designed scalable CRUD operations with structured validation, centralized error handling, and optimized MongoDB schemas for efficient storage and retrieval. Integrated AI APIs to process user input and return context-aware outputs for note enhancement. Deployed frontend and backend independently and documented API workflows to demonstrate end-to-end system architecture and functionality.",
       tech: ["Node.js", "Express.js", "MongoDB", "JWT", "React", "AI API"],
-      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+24%2C+2026%2C+02_16_12+PM.png",
+      image: "https://i.ibb.co/FbC57RCF/Chat-GPT-Image-Aug-7-2026-03-16-46-PM.png",
       liveLink: "https://ai-notebook-frontend-nine.vercel.app/",
       demoLink: "#"
     },
@@ -85,7 +85,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       problem: "Reading and analyzing large PDF documents manually is time-consuming, inefficient, and lacks intelligent summarization, making it difficult for users to extract key insights quickly.",
       solution: "Developed a full-stack AI-powered document intelligence system to automate PDF processing, text extraction, and summarization. Integrated advanced LLMs (Gemini/GPT) to generate concise summaries and meaningful insights from complex documents, significantly reducing manual effort. Implemented secure cloud-based file management using AWS S3 with time-limited signed URLs for controlled access. Engineered scalable RESTful APIs with Node.js and Express, including JWT-based authentication and automated PDF text extraction pipelines. Designed optimized MongoDB schemas for document metadata and processing history to ensure efficient storage and retrieval. Built a responsive React frontend with a modern Glassmorphism UI and Framer Motion animations, providing an interactive dashboard for document analysis and visualization.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "AWS S3", "Gemini API / OpenAI GPT", "Framer Motion", "Tailwind CSS"],
-      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+29%2C+2026%2C+01_14_38+PM.png",
+      image: "https://i.ibb.co/r2VH0TQh/Chat-GPT-Image-Aug-7-2026-03-18-01-PM.png",
       liveLink: "https://ai-document-intelligence-system-fro.vercel.app/",
       demoLink: "#https://ai-document-intelligence-system-fro.vercel.app/"
     },
@@ -95,7 +95,7 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       problem: "Manual and fragmented systems for managing student records, attendance, and academic workflows lead to inefficiencies, data inconsistency, and lack of secure access control.",
       solution: "Developed a full-stack school management system to centralize student, teacher, and academic workflows. Implemented JWT-based authentication and role-based access control (RBAC) to manage admin, staff, and student-level permissions securely. Designed scalable RESTful APIs for student records, attendance tracking, course management, and performance data with proper validation and centralized error handling. Structured and optimized MongoDB schemas for efficient CRUD operations and data consistency across modules. Built a responsive React frontend with reusable components and dashboard views for managing users, attendance, and academic data, ensuring smooth API integration and real-time updates.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
-      image: "https://selva-social.s3.us-east-1.amazonaws.com/project/ChatGPT+Image+Apr+25%2C+2026%2C+02_17_41+PM.png",
+      image: "https://i.ibb.co/JwbjZ2y1/Chat-GPT-Image-Aug-7-2026-03-19-35-PM.png",
       liveLink: "https://school-management-frontend-five-omega.vercel.app/",
       demoLink: "#"
     }
