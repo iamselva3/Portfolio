@@ -65,11 +65,11 @@ const ProjectCard = ({ project, index }) => {
         <div className="relative p-4 pb-0" style={{ transform: "translateZ(30px)" }}>
           <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
             {project.image ? (
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-contain p-4 transition-all duration-700 group-hover:scale-110"
-              />
+             <motion.img
+  src={project.image}
+  alt={project.title}
+  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
             ) : (
               <div className="flex h-full w-full items-center justify-center">
                 <Zap className="h-8 w-8 text-gray-300 dark:text-zinc-700" />
