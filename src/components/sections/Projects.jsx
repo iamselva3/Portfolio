@@ -16,7 +16,13 @@ const ProjectCard = ({ project, index }) => {
 
   const glowBackground = useTransform(
     [mouseXSpring, mouseYSpring],
-    ([mx, my]) => `radial-gradient(600px circle at ${(mx + 0.5) * 100}% ${(my + 0.5) * 100}%, rgba(59, 130, 246, 0.15), transparent 40%)`
+    (values) => {
+      const mx = values[0];
+      const my = values[1];
+      const posX = (mx + 0.5) * 100;
+      const posY = (my + 0.5) * 100;
+      return "radial-gradient(600px circle at " + posX + "% " + posY + "%, rgba(59, 130, 246, 0.15), transparent 40%)";
+    }
   );
 
   const handleMouseMove = (e) => {
@@ -36,6 +42,9 @@ const ProjectCard = ({ project, index }) => {
     y.set(0);
   };
 
+  const hasLiveLink = project.liveLink && project.liveLink !== "#";
+  const hasDemoLink = project.demoLink && project.demoLink !== "#";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,9 +54,9 @@ const ProjectCard = ({ project, index }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
+        rotateX: rotateX,
+        rotateY: rotateY,
+        transformStyle: "preserve-3d"
       }}
       className="group relative flex flex-col rounded-[2rem] border border-gray-200/50 dark:border-white/10 bg-white/10 dark:bg-zinc-900/10 backdrop-blur-xl p-2 transition-all duration-500 hover:border-blue-500/40"
     >
@@ -55,15 +64,11 @@ const ProjectCard = ({ project, index }) => {
         style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}
         className="relative flex flex-1 flex-col overflow-hidden rounded-[1.8rem] bg-white/95 dark:bg-zinc-900/95 shadow-xl"
       >
-        {/* Dynamic Glow Effect */}
         <motion.div
           className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background: glowBackground,
-          }}
+          style={{ background: glowBackground }}
         />
 
-        {/* Aesthetic Image Container */}
         <div className="relative p-4 pb-0" style={{ transform: "translateZ(30px)" }}>
           <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
             {project.image ? (
@@ -78,10 +83,9 @@ const ProjectCard = ({ project, index }) => {
               </div>
             )}
 
-            {/* Minimal Overlay for Links */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4 backdrop-blur-[2px]">
-              {project.liveLink && project.liveLink !== "#" && (
-                
+              {hasLiveLink && (
+                <a
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -90,8 +94,8 @@ const ProjectCard = ({ project, index }) => {
                   <ExternalLink size={20} />
                 </a>
               )}
-              {project.demoLink && project.demoLink !== "#" && (
-                
+              {hasDemoLink && (
+                <a
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -104,7 +108,6 @@ const ProjectCard = ({ project, index }) => {
           </div>
         </div>
 
-        {/* Content Section */}
         <div className="flex flex-1 flex-col p-6" style={{ transform: "translateZ(20px)" }}>
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">
@@ -149,19 +152,17 @@ export default function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="flex items-center gap-2 text-blue-500 font-semibold mb-2"
-          >
-          </motion.div>
+          />
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
             Building Digital Experiences
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            A collection of projects where I've combined design thinking with engineering excellence.
+            A collection of projects where I have combined design thinking with engineering excellence.
           </p>
         </div>
 
         <div className="flex gap-4">
-          <div className="text-right">
-          </div>
+          <div className="text-right" />
         </div>
       </div>
 
