@@ -62,19 +62,24 @@ const ProjectCard = ({ project, index }) => {
         />
 
         {/* Aesthetic Image Container */}
-        <div className="relative p-4 pb-0" style={{ transform: "translateZ(30px)" }}>
-          <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
-            {project.image ? (
-             <motion.img
-  src={project.image}
-  alt={project.title}
-  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
-/>
-            ) : (
-              <div className="flex h-full w-full items-center justify-center">
-                <Zap className="h-8 w-8 text-gray-300 dark:text-zinc-700" />
-              </div>
-            )}
+       <div
+  className="relative p-4 pb-0"
+  style={{ transform: "translateZ(30px)" }}
+>
+  <div className="relative h-56 overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
+    {project.image ? (
+      <motion.img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+      />
+    ) : (
+      <div className="flex h-full w-full items-center justify-center">
+        <Zap className="h-8 w-8 text-gray-300 dark:text-zinc-700" />
+      </div>
+    )}
+  </div>
+</div>
             
             {/* Minimal Overlay for Links */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4 backdrop-blur-[2px]">
