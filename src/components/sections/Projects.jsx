@@ -14,6 +14,11 @@ const ProjectCard = ({ project, index }) => {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
+  const glowBackground = useTransform(
+    [mouseXSpring, mouseYSpring],
+    ([mx, my]) => `radial-gradient(600px circle at ${(mx + 0.5) * 100}% ${(my + 0.5) * 100}%, rgba(59, 130, 246, 0.15), transparent 40%)`
+  );
+
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
@@ -46,7 +51,7 @@ const ProjectCard = ({ project, index }) => {
       }}
       className="group relative flex flex-col rounded-[2rem] border border-gray-200/50 dark:border-white/10 bg-white/10 dark:bg-zinc-900/10 backdrop-blur-xl p-2 transition-all duration-500 hover:border-blue-500/40"
     >
-      <div 
+      <div
         style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}
         className="relative flex flex-1 flex-col overflow-hidden rounded-[1.8rem] bg-white/95 dark:bg-zinc-900/95 shadow-xl"
       >
@@ -54,37 +59,29 @@ const ProjectCard = ({ project, index }) => {
         <motion.div
           className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            background: useTransform(
-              [mouseXSpring, mouseYSpring],
-              ([mx, my]) => `radial-gradient(600px circle at ${(mx + 0.5) * 100}% ${(my + 0.5) * 100}%, rgba(59, 130, 246, 0.15), transparent 40%)`
-            ),
+            background: glowBackground,
           }}
         />
 
         {/* Aesthetic Image Container */}
-       <div
-  className="relative p-4 pb-0"
-  style={{ transform: "translateZ(30px)" }}
->
-  <div className="relative h-56 overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
-    {project.image ? (
-      <motion.img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-      />
-    ) : (
-      <div className="flex h-full w-full items-center justify-center">
-        <Zap className="h-8 w-8 text-gray-300 dark:text-zinc-700" />
-      </div>
-    )}
-  </div>
-</div>
-            
+        <div className="relative p-4 pb-0" style={{ transform: "translateZ(30px)" }}>
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-50 dark:bg-zinc-800/30 border border-gray-100 dark:border-white/5">
+            {project.image ? (
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center">
+                <Zap className="h-8 w-8 text-gray-300 dark:text-zinc-700" />
+              </div>
+            )}
+
             {/* Minimal Overlay for Links */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4 backdrop-blur-[2px]">
               {project.liveLink && project.liveLink !== "#" && (
-                <a
+                
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -94,7 +91,7 @@ const ProjectCard = ({ project, index }) => {
                 </a>
               )}
               {project.demoLink && project.demoLink !== "#" && (
-                <a
+                
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -140,14 +137,11 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-
-
-
 export default function Projects() {
   return (
     <AnimatedSection id="projects" className="relative">
       <div className="absolute -top-24 left-0 -z-10 h-64 w-64 rounded-full bg-blue-500/10 blur-[120px]" />
-      
+
       <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="max-w-2xl">
           <motion.div
@@ -164,11 +158,9 @@ export default function Projects() {
             A collection of projects where I've combined design thinking with engineering excellence.
           </p>
         </div>
-        
+
         <div className="flex gap-4">
           <div className="text-right">
-            {/* <p className="text-3xl font-bold text-gray-900 dark:text-white">10+</p>
-            <p className="text-sm text-gray-500">Completed Projects</p> */}
           </div>
         </div>
       </div>
@@ -181,4 +173,3 @@ export default function Projects() {
     </AnimatedSection>
   );
 }
-
