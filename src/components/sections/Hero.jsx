@@ -264,6 +264,11 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
+            {/* Mobile Name */}
+            <motion.h2 variants={fadeUp} className="md:hidden text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">
+              Selvaganesh
+            </motion.h2>
+
             {/* Label */}
             <motion.div variants={fadeUp}>
               <span className="hero-label">FULL STACK DEVELOPER</span>

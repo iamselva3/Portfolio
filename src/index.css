@@ -17,12 +17,14 @@
 }
 
 html {
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 body {
+  overflow-x: hidden;
   background-color: var(--color-bg);
   color: var(--color-text);
   @apply antialiased transition-colors duration-300;
@@ -31,6 +33,7 @@ body {
 /* Native smooth scrolling fallback when Lenis is disabled (reduced motion). */
 @media (prefers-reduced-motion: reduce) {
   html {
+  overflow-x: hidden;
     scroll-behavior: smooth;
   }
   *,
