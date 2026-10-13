@@ -17,23 +17,56 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  overflow-x: hidden;
+  min-height: 100vh;
+  overflow-x: clip;
+  overflow-y: visible;
   background-color: var(--color-bg);
   color: var(--color-text);
   @apply antialiased transition-colors duration-300;
 }
 
+#root {
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* Custom Sleek Scrollbar — Prevents thick dual Windows scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 /* Native smooth scrolling fallback when Lenis is disabled (reduced motion). */
 @media (prefers-reduced-motion: reduce) {
   html {
-  overflow-x: hidden;
+    overflow-x: clip;
     scroll-behavior: smooth;
   }
   *,
@@ -49,3 +82,4 @@ body {
 canvas {
   touch-action: none;
 }
+

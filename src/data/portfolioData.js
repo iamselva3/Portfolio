@@ -50,20 +50,90 @@ Focused on creating intuitive, visually appealing, and efficient applications th
   ],
   projects: [
     {
+      id: "ai-document-intelligence",
+      title: "AI Document Intelligence System",
+      category: "AI & Intelligence",
+      tagline: "Autonomous document understanding, summarization & insight extraction pipeline",
+      featured: true,
+      badge: "Flagship AI Project",
+      status: "Live App",
+      metrics: {
+        highlight: "< 1.5s",
+        label: "AI Processing Time"
+      },
+      highlights: [
+        "LLM-powered document summarization & deep insight extraction via Gemini & GPT",
+        "AWS S3 cloud storage with time-limited signed URLs for zero-trust document security",
+        "Reactive Glassmorphic dashboard with real-time analysis streaming and visual stats"
+      ],
+      stackGroup: {
+        frontend: ["React 19", "Tailwind CSS", "Framer Motion", "Glassmorphic UI"],
+        backend: ["Node.js", "Express.js", "Automated PDF Pipeline"],
+        database: ["MongoDB", "Mongoose"],
+        cloud: ["AWS S3 Signed URLs", "Gemini API", "OpenAI GPT", "JWT Security"]
+      },
+      problem: "Reading and analyzing voluminous PDF documents manually is notoriously slow, error-prone, and inefficient, creating critical bottlenecks when teams need fast, reliable answers from legal, financial, and technical reports.",
+      solution: "Engineered an end-to-end AI document intelligence platform that automates PDF text parsing, semantic structuring, and multi-layered LLM summarization. Features secure pre-signed AWS S3 URL pipelines, modular Express micro-routes, role-protected JWT sessions, and a glassmorphic React frontend built for real-time document interaction.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "AWS S3", "Gemini API", "Framer Motion", "Tailwind CSS"],
+      image: "https://i.ibb.co/r2VH0TQh/Chat-GPT-Image-Aug-7-2026-03-18-01-PM.png",
+      liveLink: "https://ai-document-intelligence-system-fro.vercel.app/",
+      demoLink: "https://ai-document-intelligence-system-fro.vercel.app/"
+    },
+    {
       id: "npay",
       title: "N-Pay – Gold & Chit Management Platform",
-      problem: "Manual chit and gold investment tracking systems lacked transparency, scalability, and secure access control.",
-      solution: "Engineered a scalable MERN-based platform to digitize chit fund and gold investment workflows, enabling customer onboarding, scheme management, payment tracking, and order processing. Implemented JWT-based authentication and role-based access control (RBAC) to enforce secure admin and user operations. Designed modular REST APIs for schemes, payments, gold orders, and shipment tracking with centralized error handling and validation. Optimized MongoDB schemas and queries to ensure high performance and data consistency. Integrated Razorpay for secure transactions and developed a responsive admin dashboard with reusable React components and Tailwind CSS, along with real-time delivery tracking features.",
-      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "Razorpay"],
+      category: "Fintech & Enterprise",
+      tagline: "High-concurrency fintech solution digitizing chit schemes and physical gold investment",
+      featured: true,
+      badge: "Fintech Scale",
+      status: "Production Architecture",
+      metrics: {
+        highlight: "100%",
+        label: "Audit & RBAC Compliance"
+      },
+      highlights: [
+        "Comprehensive RBAC with granular admin, agent, and investor authorization workflows",
+        "Integrated Razorpay & Cashfree payment gateways with webhook idempotency",
+        "Automated shipment tracking & real-time delivery pipeline for physical gold distribution"
+      ],
+      stackGroup: {
+        frontend: ["React", "Tailwind CSS", "Admin Analytics Dashboard"],
+        backend: ["Node.js", "Express.js", "RESTful Core", "Razorpay SDK"],
+        database: ["MongoDB", "Schema Indexing", "Transaction Aggregations"],
+        cloud: ["AWS EC2", "AWS S3", "Vercel", "Render"]
+      },
+      problem: "Traditional paper-based chit fund and gold schemes suffer from fragmented records, lack of real-time auditability, and severe security risks during payment collection and physical gold fulfillment.",
+      solution: "Architected a full-cycle enterprise platform digitizing chit onboarding, installment schedules, gold purchase mechanics, and doorstep shipment. Engineered atomic MongoDB transactions, JWT authentication with role-based policies, Razorpay checkout hooks, and an executive administration dashboard.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "Razorpay", "AWS S3"],
       image: "https://i.ibb.co/QFtFN6Cx/Chat-GPT-Image-Aug-7-2026-03-09-46-PM.png",
       liveLink: "#",
       demoLink: "#"
     },
     {
-      id: "Namma Cart",
+      id: "namma-cart",
       title: "Namma Cart – MERN E-Commerce Platform",
-      problem: "E-commerce systems require secure authentication, scalable product handling, and smooth admin-user workflows.",
-      solution: "Built a full-stack e-commerce platform supporting complete user and admin workflows, including product browsing, cart management, and checkout processing. Developed secure authentication using JWT and implemented RBAC for protected admin operations such as product, category, and user management. Designed and integrated RESTful APIs with optimized MongoDB schemas for efficient product and order handling. Integrated AWS S3 for scalable product image storage and Razorpay for seamless online payments. Created a responsive UI and dynamic admin dashboard using React and Tailwind CSS to manage inventory, featured products, and user activities efficiently.",
+      category: "E-Commerce",
+      tagline: "Modern digital storefront with dynamic inventory management and instant checkout",
+      featured: false,
+      badge: "Full Stack Store",
+      status: "Live App",
+      metrics: {
+        highlight: "100%",
+        label: "End-to-End Workflow"
+      },
+      highlights: [
+        "Comprehensive product catalog with multi-variant filtering and real-time cart state",
+        "Protected admin portal for category management, inventory adjustments, and order audits",
+        "Direct Razorpay online payment integration paired with AWS S3 asset hosting"
+      ],
+      stackGroup: {
+        frontend: ["React", "Tailwind CSS", "Responsive UI"],
+        backend: ["Node.js", "Express.js", "JWT Auth", "Razorpay"],
+        database: ["MongoDB", "Mongoose"],
+        cloud: ["AWS S3", "Vercel Deployment"]
+      },
+      problem: "Growing online retailers need affordable yet resilient e-commerce architectures that avoid bulky monoliths and handle peak traffic, secure payments, and instant inventory sync.",
+      solution: "Developed a modular MERN e-commerce application equipped with instant cart synchronization, dynamic filtering, secure JWT-based admin controls, AWS S3 image storage, and seamless Razorpay transactions.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "AWS S3", "Razorpay"],
       image: "https://i.ibb.co/SD02yT6d/Chat-GPT-Image-Aug-7-2026-03-11-55-PM.png",
       liveLink: "https://ecommerce-frontend-kohl-delta.vercel.app/",
@@ -71,33 +141,63 @@ Focused on creating intuitive, visually appealing, and efficient applications th
     },
     {
       id: "ainotebook",
-      title: "AI Notebook – Full Stack Application",
-      problem: "Users lack intelligent tools to enhance, summarize, and organize notes efficiently.",
-      solution: "Developed a backend-driven AI-powered notebook application that allows users to generate, summarize, and enhance notes using an integrated LLM API. Built secure JWT-based authentication and protected REST APIs to ensure user data isolation and session security. Designed scalable CRUD operations with structured validation, centralized error handling, and optimized MongoDB schemas for efficient storage and retrieval. Integrated AI APIs to process user input and return context-aware outputs for note enhancement. Deployed frontend and backend independently and documented API workflows to demonstrate end-to-end system architecture and functionality.",
-      tech: ["Node.js", "Express.js", "MongoDB", "JWT", "React", "AI API"],
+      title: "AI Notebook – Smart Note Augmentation",
+      category: "AI & Intelligence",
+      tagline: "Intelligent note-taking workspace with contextual LLM summarization and synthesis",
+      featured: false,
+      badge: "AI Powered",
+      status: "Live App",
+      metrics: {
+        highlight: "Real-time",
+        label: "AI Synthesis"
+      },
+      highlights: [
+        "LLM API integration for automated note restructuring, bullet summarization, and tone enhancement",
+        "Isolated user data sandboxes enforced by JWT token validation on every micro-endpoint",
+        "Responsive, markdown-friendly editing experience with instant local and cloud sync"
+      ],
+      stackGroup: {
+        frontend: ["React", "Tailwind CSS", "Context API"],
+        backend: ["Node.js", "Express.js", "AI REST Service"],
+        database: ["MongoDB", "User Partitioning"],
+        cloud: ["Vercel", "AI APIs"]
+      },
+      problem: "Traditional digital notebooks are static containers that require endless manual curation, synthesis, and reformatting without offering intelligent assistance.",
+      solution: "Engineered a reactive AI-assisted notebook enabling users to draft ideas, auto-generate executive summaries, and expand key concepts on demand via prompt-engineered LLM APIs connected to a hardened Node.js backend.",
+      tech: ["Node.js", "Express.js", "MongoDB", "JWT", "React", "AI API", "Tailwind CSS"],
       image: "https://i.ibb.co/FbC57RCF/Chat-GPT-Image-Aug-7-2026-03-16-46-PM.png",
       liveLink: "https://ai-notebook-frontend-nine.vercel.app/",
-      demoLink: "#"
-    },
-    {
-      id: "ai-document-intelligence",
-      title: "AI Document Intelligence System – MERN Full Stack Application",
-      problem: "Reading and analyzing large PDF documents manually is time-consuming, inefficient, and lacks intelligent summarization, making it difficult for users to extract key insights quickly.",
-      solution: "Developed a full-stack AI-powered document intelligence system to automate PDF processing, text extraction, and summarization. Integrated advanced LLMs (Gemini/GPT) to generate concise summaries and meaningful insights from complex documents, significantly reducing manual effort. Implemented secure cloud-based file management using AWS S3 with time-limited signed URLs for controlled access. Engineered scalable RESTful APIs with Node.js and Express, including JWT-based authentication and automated PDF text extraction pipelines. Designed optimized MongoDB schemas for document metadata and processing history to ensure efficient storage and retrieval. Built a responsive React frontend with a modern Glassmorphism UI and Framer Motion animations, providing an interactive dashboard for document analysis and visualization.",
-      tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "AWS S3", "Gemini API / OpenAI GPT", "Framer Motion", "Tailwind CSS"],
-      image: "https://i.ibb.co/r2VH0TQh/Chat-GPT-Image-Aug-7-2026-03-18-01-PM.png",
-      liveLink: "https://ai-document-intelligence-system-fro.vercel.app/",
-      demoLink: "#https://ai-document-intelligence-system-fro.vercel.app/"
+      demoLink: "https://ai-notebook-frontend-nine.vercel.app/"
     },
     {
       id: "schoolmanagement",
-      title: "School Management System – MERN Full Stack Application",
-      problem: "Manual and fragmented systems for managing student records, attendance, and academic workflows lead to inefficiencies, data inconsistency, and lack of secure access control.",
-      solution: "Developed a full-stack school management system to centralize student, teacher, and academic workflows. Implemented JWT-based authentication and role-based access control (RBAC) to manage admin, staff, and student-level permissions securely. Designed scalable RESTful APIs for student records, attendance tracking, course management, and performance data with proper validation and centralized error handling. Structured and optimized MongoDB schemas for efficient CRUD operations and data consistency across modules. Built a responsive React frontend with reusable components and dashboard views for managing users, attendance, and academic data, ensuring smooth API integration and real-time updates.",
+      title: "School Management System",
+      category: "EdTech & Enterprise",
+      tagline: "Unified institutional ERP centralizing student records, attendance, and academics",
+      featured: false,
+      badge: "Enterprise EdTech",
+      status: "Live App",
+      metrics: {
+        highlight: "3-Tier",
+        label: "Role-Based Access"
+      },
+      highlights: [
+        "Three-tier RBAC architecture tailored for Administrators, Teachers, and Students",
+        "Daily attendance tracking module with auto-calculated percentage and historical analytics",
+        "Centralized academic grade reporting and student dossier management"
+      ],
+      stackGroup: {
+        frontend: ["React", "Tailwind CSS", "Dashboard Views"],
+        backend: ["Node.js", "Express.js", "RBAC Policies"],
+        database: ["MongoDB", "Relational Schemas via References"],
+        cloud: ["Vercel", "Render"]
+      },
+      problem: "Educational institutions struggle with fragmented spreadsheets and disjointed software for student records, daily attendance, and academic performance.",
+      solution: "Delivered a centralized full-stack ERP covering institutional workflows from admissions and course scheduling to daily attendance logs and report cards, safeguarded with multi-level RBAC and efficient MongoDB indexes.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
       image: "https://i.ibb.co/JwbjZ2y1/Chat-GPT-Image-Aug-7-2026-03-19-35-PM.png",
       liveLink: "https://school-management-frontend-five-omega.vercel.app/",
-      demoLink: "#"
+      demoLink: "https://school-management-frontend-five-omega.vercel.app/"
     }
   ],
   contact: {

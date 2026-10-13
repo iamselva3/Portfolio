@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Accessibility, Settings2 } from 'lucide-react';
+import { Moon, Sun, Terminal, Accessibility, Settings2 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { usePreference } from '../../context/PreferenceContext';
 import { cn } from '../../utils/cn';
@@ -17,6 +17,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleReplaySplash = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.dispatchEvent(new CustomEvent('replay-splash'));
+  };
+
   return (
     <nav className={cn(
       "fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
@@ -28,33 +33,35 @@ export default function Navbar() {
         "max-w-6xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
         isScrolled ? "h-14" : "h-16"
       )}>
-        <div className="font-bold text-xl tracking-tight">SG.</div>
+        <button
+          onClick={handleReplaySplash}
+          className="font-bold text-xl tracking-tight hover:text-blue-500 transition-colors flex items-center gap-1.5 cursor-pointer"
+          title="Click to replay Terminal Boot Sequence"
+        >
+          <span>SG.</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+        </button>
         
-        <div className="flex items-center gap-4">
-          <ul className="hidden md:flex gap-6 text-sm font-medium mr-4">
+        <div className="flex items-center gap-3">
+          <ul className="hidden md:flex gap-6 text-sm font-medium mr-3">
             <li><a href="#about" className="hover:text-blue-500 transition-colors">About</a></li>
             <li><a href="#experience" className="hover:text-blue-500 transition-colors">Experience</a></li>
             <li><a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a></li>
             <li><a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a></li>
           </ul>
 
-          {/* <button 
-            onClick={() => setRecruiterMode(!recruiterMode)}
-            className={cn(
-              "flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-colors",
-              recruiterMode 
-                ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" 
-                : "bg-gray-100 text-gray-700 dark:bg-zinc-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-zinc-700"
-            )}
-            title="Recruiter Mode (Disables Animations)"
+          <button 
+            onClick={handleReplaySplash}
+            className="p-2 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 dark:hover:bg-cyan-950/40 border border-transparent hover:border-cyan-500/30 transition-all cursor-pointer"
+            aria-label="Replay Coding Splash Screen"
+            title="Replay Terminal Boot Intro"
           >
-            {recruiterMode ? <Accessibility size={14} /> : <Settings2 size={14} />}
-            <span className="hidden sm:inline">Recruiter Mode</span>
-          </button> */}
+            <Terminal size={16} />
+          </button>
 
           <button 
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors"
+            className="p-2 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors cursor-pointer"
             aria-label="Toggle Theme"
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
