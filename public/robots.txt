@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://selvaganesh.work.gd/sitemap.xml
+Sitemap: https://www.selvaganesh.work.gd/sitemap.xml
