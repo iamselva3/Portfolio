@@ -1,0 +1,7 @@
+# robots.txt — Selvaganesh Portfolio
+# https://selvaganesh.work.gd
+
+User-agent: *
+Allow: /
+
+Sitemap: https://selvaganesh.work.gd/sitemap.xml
