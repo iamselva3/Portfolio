@@ -504,7 +504,8 @@ const FlagshipShowcase = ({ project, onSelect }) => {
               <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
               <span className="text-[10px] text-zinc-500 font-mono ml-2 truncate">
-                {project.liveLink || 'https://production-app.vercel.app'}
+                {project.displayUrl ||
+                  (project.liveLink && project.liveLink !== '#' ? project.liveLink : 'https://production-app.vercel.app')}
               </span>
             </div>
 
@@ -541,6 +542,7 @@ export default function Projects() {
     'Fintech & Enterprise',
     'E-Commerce',
     'EdTech & Enterprise',
+    'SaaS & Platforms',
   ];
 
   const filteredProjects =

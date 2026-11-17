@@ -7,6 +7,7 @@ import { ArrowRight, Download, Mail } from 'lucide-react';
 import portrait2 from '../../assets/2.png';
 import portrait3 from '../../assets/3.png';
 import portrait4 from '../../assets/4.png';
+import portrait5 from '../../assets/5.png';
 import './hero.css';
 
 // ─── SVG Tech Icons (inline for glow + crisp rendering) ─────────────────────
@@ -145,12 +146,22 @@ const scaleIn = {
 // the man himself). Head-top anchoring is no better: the head is 36% of the
 // subject in 3.png but only 6% in 4.png, so it rides the tall-headed shots
 // upward and leaves dead space underneath. The torso median-x is stable across
-// all three poses, so that is what gets centred.
+// all four poses, so that is what gets centred.
 // All use transform-origin 50% 50% — scaling from an off-centre origin would
 // re-introduce the drift these values correct for.
 const heroImages = [
   {
     id: 1,
+    src: portrait2,
+    alt: 'Selvaganesh — Full Stack Developer',
+    // 1080x1256 canvas, subject fills it; both arms raised beside the head
+    scale: 1.147,
+    x: '0.46%',
+    y: '-6.23%',
+    glowColor: 'rgba(59, 130, 246, 0.38)', // Cyber Blue
+  },
+  {
+    id: 2,
     src: portrait3,
     alt: 'Selvaganesh — Cloud & AI Developer',
     // 1080x2057 canvas, subject in the top half; raised hand well above shoulder.
@@ -165,17 +176,20 @@ const heroImages = [
     glowColor: 'rgba(14, 165, 233, 0.38)', // Cyan
   },
   {
-    id: 2,
-    src: portrait2,
-    alt: 'Selvaganesh — Full Stack Developer',
-    // 1080x1256 canvas, subject fills it; both arms raised beside the head
-    scale: 1.147,
-    x: '0.46%',
-    y: '-6.23%',
-    glowColor: 'rgba(59, 130, 246, 0.38)', // Cyber Blue
+    id: 3,
+    src: portrait5,
+    alt: 'Selvaganesh — MERN & Full Stack Developer',
+    // 1080x1090 canvas: head to mid-torso (cut just above the shirt hem), arms down.
+    // Background removed and graded to match 2.png's skin tone and local contrast.
+    // Closer framing than the other shots: the subject spans -20..400px, so the
+    // bottom edge lines up with 3.png/4.png; x pulls the torso back to centre.
+    scale: 1.189,
+    x: '-1.64%',
+    y: '-8.09%',
+    glowColor: 'rgba(45, 212, 191, 0.34)', // Teal
   },
   {
-    id: 3,
+    id: 4,
     src: portrait4,
     alt: 'Selvaganesh — Software Engineer',
     // 1536x1024 canvas, subject small and right-of-centre; tight standing crop

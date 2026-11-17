@@ -1,4 +1,7 @@
 import resumeFile from '../assets/Selva_resume.pdf';
+import examPlatformCover from '../assets/projects/exam-platform.svg';
+import restaurantSaasCover from '../assets/projects/restaurant-saas.svg';
+import inventoryLedgerCover from '../assets/projects/inventory-ledger.svg';
 
 export const portfolioData = {
   hero: {
@@ -49,6 +52,37 @@ Focused on creating intuitive, visually appealing, and efficient applications th
     },
   ],
   projects: [
+    {
+      id: "online-exam-platform",
+      title: "Proctored Online Exam & Assessment Platform",
+      category: "EdTech & Enterprise",
+      tagline: "Multi-tenant exam engine that turns scanned question papers into proctored, auto-graded online tests",
+      featured: true,
+      badge: "Enterprise EdTech",
+      status: "Live in Production",
+      metrics: {
+        highlight: "180 → 5",
+        label: "DB Writes per Submission"
+      },
+      highlights: [
+        "OCR pipeline (BullMQ + Tesseract / PaddleOCR sidecars) converts scanned PDFs into a teacher-reviewed question bank with diagram cropping",
+        "Proctored attempt UI with fullscreen lock, tab-switch / copy / devtools detection, a server-owned timer, heartbeat autosave and auto-submit on violation limits",
+        "Rank lists, weak-topic and per-question difficulty analytics with CSV / PDF / XLSX exports and emailed parent reports"
+      ],
+      stackGroup: {
+        frontend: ["React 18", "TypeScript", "MUI + Tailwind CSS", "TanStack Query", "Zustand", "PWA"],
+        backend: ["NestJS 10", "BullMQ + Redis", "Python FastAPI OCR Sidecars", "Passport JWT"],
+        database: ["PostgreSQL", "Prisma", "Tenant-Scoped Repositories"],
+        cloud: ["AWS EC2", "Cloudflare R2 & Pages", "Docker Compose", "Web Push"]
+      },
+      problem: "Coaching institutes preparing students for competitive entrance exams still depend on paper tests and hours of manually typing questions, with no reliable way to prevent malpractice in online tests or to turn results into feedback students and parents can act on.",
+      solution: "Built a multi-tenant assessment platform where teachers upload scanned papers, an OCR pipeline extracts the questions into a reviewable bank, and exams with 7+ question types, negative marking and randomised order run as proctored online tests. A server-authoritative clock, batched violation tracking and invigilator resume PINs keep large exam sessions fair. Auto-grading, explainable rule-based descriptive marking, AI-generated question variants and per-student error-analysis reports close the feedback loop. Submission grading was cut from 180 database writes to 5 so a full campus can submit at once.",
+      tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "BullMQ", "Redis", "Python", "AWS EC2", "Cloudflare R2"],
+      image: examPlatformCover,
+      displayUrl: "private client deployment",
+      liveLink: "#",
+      demoLink: "#"
+    },
     {
       id: "ai-document-intelligence",
       title: "AI Document Intelligence System",
@@ -106,6 +140,66 @@ Focused on creating intuitive, visually appealing, and efficient applications th
       solution: "Architected a full-cycle enterprise platform digitizing chit onboarding, installment schedules, gold purchase mechanics, and doorstep shipment. Engineered atomic MongoDB transactions, JWT authentication with role-based policies, Razorpay checkout hooks, and an executive administration dashboard.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "Razorpay", "AWS S3"],
       image: "https://i.ibb.co/QFtFN6Cx/Chat-GPT-Image-Aug-7-2026-03-09-46-PM.png",
+      liveLink: "#",
+      demoLink: "#"
+    },
+    {
+      id: "restaurant-ordering-saas",
+      title: "Commission-Free Restaurant Ordering SaaS",
+      category: "SaaS & Platforms",
+      tagline: "White-label direct ordering with a storefront, owner dashboard, kitchen display and platform admin",
+      featured: false,
+      badge: "Multi-Tenant SaaS",
+      status: "Client SaaS Build",
+      metrics: {
+        highlight: "345+",
+        label: "Automated Tests"
+      },
+      highlights: [
+        "Four React apps (storefront, dashboard, kitchen display, admin) in a Turborepo monorepo sharing typed contracts and one order state machine",
+        "Stripe Connect checkout paying each restaurant directly, with refunds and daily reconciliation in integer pence",
+        "Postgres row-level security on every table plus per-request tenant roles, backed by cross-tenant isolation tests"
+      ],
+      stackGroup: {
+        frontend: ["React 19", "Vite", "TanStack Query", "Tailwind CSS 4 + Radix UI", "Turborepo"],
+        backend: ["Node.js", "Fastify 5", "TypeScript", "Zod Contracts", "JWT (jose)"],
+        database: ["PostgreSQL (Supabase)", "Prisma", "Row-Level Security"],
+        cloud: ["Stripe Connect", "Supabase Realtime", "Upstash Redis", "Twilio & Resend", "Cloudflare Pages"]
+      },
+      problem: "Independent restaurants and takeaways lose 30–35% of every order to delivery marketplaces and own neither their customer relationships nor their online ordering experience.",
+      solution: "Engineered a multi-tenant, white-label ordering SaaS sold on a flat monthly plan instead of commission. It includes a mobile storefront for delivery, collection and QR table ordering, a live kitchen display and POS-style till, postcode-based delivery zones, CRM campaigns over SMS and email, and a platform admin for provisioning restaurants and versioned pricing plans. A shared state machine drives the order lifecycle, and a database event log read with a transaction cursor delivers each kitchen update exactly once.",
+      tech: ["React", "TypeScript", "Fastify", "PostgreSQL", "Prisma", "Stripe", "Supabase", "Redis", "Playwright"],
+      image: restaurantSaasCover,
+      liveLink: "#",
+      demoLink: "#"
+    },
+    {
+      id: "warehouse-inventory-ledger",
+      title: "Multi-Warehouse Inventory & Stock Ledger",
+      category: "SaaS & Platforms",
+      tagline: "Mobile-first stock control with barcode / QR workflows, inter-warehouse transfers and AI bill reading",
+      featured: false,
+      badge: "Operations Platform",
+      status: "Phase 1 Delivered",
+      metrics: {
+        highlight: "< 150ms",
+        label: "Full Catalogue Load"
+      },
+      highlights: [
+        "Append-only stock ledger: on-hand quantity is derived from entries, mistakes are fixed with reversing entries, and every change is audited",
+        "AI supplier-bill reader: a photo or PDF is parsed by Claude into a Zod-validated schema, then fuzzy-matched to items with per-supplier memory",
+        "Barcode / QR entry slips, thermal and A4 label printing, short-code entry and USB / camera scanning"
+      ],
+      stackGroup: {
+        frontend: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4 + Radix UI", "SWR"],
+        backend: ["Next.js Route Handlers", "Zod Validation", "HMAC Sessions + scrypt"],
+        database: ["Append-Only Ledger Store", "IndexedDB Offline Mode"],
+        cloud: ["Claude AI API", "SheetJS Excel", "ZXing / JsBarcode / QR", "Cloudflare Pages"]
+      },
+      problem: "A wholesaler running several warehouses, carton rooms and a retail counter had outgrown its off-the-shelf inventory app. Stock moved between locations without traceability, supplier bills were keyed in by hand, and site safety rules keep phones away from the stock floor.",
+      solution: "Delivered a mobile-first stock system built on an append-only ledger, with In / Out / Move / Adjust flows, in-transit transfers received with short or extra reasons, four-tier role permissions, and reports ranging from daily movement charts to an item × location stock grid with Excel export. Scanning is designed around printed QR entry slips at the office desk, and an AI bill reader turns supplier invoices into draft stock entries.",
+      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Claude AI", "Zod", "IndexedDB", "Barcode / QR"],
+      image: inventoryLedgerCover,
       liveLink: "#",
       demoLink: "#"
     },
